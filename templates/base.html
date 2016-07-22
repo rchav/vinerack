@@ -13,6 +13,16 @@
         <meta name="author" content="{% trans "Mirumee Software" %}">
         {% endblock meta %}
 
+        {% block additional_styles %}
+        <style>
+           body {
+            background-image: url(media/background.gif); 
+            background-repeat:no-repeat;
+            background-size:cover;
+           }
+        </style>
+        {% endblock %}
+
         {% render_bundle 'vendor' 'css' %}
         {% render_bundle 'storefront' 'css' %}
 
