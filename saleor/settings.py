@@ -229,14 +229,16 @@ GOOGLE_CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET')
 PAYMENT_MODEL = 'order.Payment'
 
 PAYMENT_VARIANTS = {
-    'default': ('payments.dummy.DummyProvider', {})
+    'stripe': ('payments.stripe.StripeProvider', {
+        'secret_key': 'sk_test_hTkxiCYCzo8HKqZnaRKETQHL',
+        'public_key': 'pk_test_pYfPDEqpbvB28osClyt9hAeI'})
 }
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('default', 'Dummy provider')
+    ('stripe', 'Credit card')
 ]
 
 MESSAGE_TAGS = {

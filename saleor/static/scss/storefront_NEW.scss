@@ -61,12 +61,7 @@ $fa-font-path: "~font-awesome/fonts";
 	}
 }
 
-$bgDefault      : #bf1c64;
-$bgHighlight    : #ffeca3;
-$colDefault     : #ffffff;
-$colHighlight   : #000000;
-$dropDown       : true;
-.navbar-default {
+.nav {
   background-color: $bgDefault;
   border-color: $bgHighlight;
   .navbar-brand {
@@ -118,31 +113,6 @@ $dropDown       : true;
     color: $colDefault;
     &:hover {
       color: $colHighlight; }}}
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu {
-    > li > a {
-      color: $colDefault;
-      &:hover, &:focus {
-        color: $colHighlight; }}
-    > .active {
-      > a, > a:hover, > a:focus {
-        color: $colHighlight;
-        background-color: $bgHighlight; }}}
-}
-
-.nav {
-	> li {
-		> a {
-			@extend .text-info;
-		}
-
-		&.active {
-			> a, a:hover {
-				background-color: $brand-info;
-			}
-		}
-	}
-}
 
 .page-header {
 	&--order {
