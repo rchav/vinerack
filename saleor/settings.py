@@ -232,13 +232,19 @@ PAYMENT_VARIANTS = {
     'stripe': ('payments.stripe.StripeProvider', {
         'secret_key': 'sk_test_hTkxiCYCzo8HKqZnaRKETQHL',
         'public_key': 'pk_test_pYfPDEqpbvB28osClyt9hAeI'})
+
+    # 'paypal': ('payments.paypal.PaypalProvider', {
+    #     'client_id': 'rackvine@gmail.com',
+    #     'secret': 'iseedeadpeople',
+    #     'endpoint': 'https://api.sandbox.paypal.com',
+    #     'capture': False})
 }
 
 SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
 
 CHECKOUT_PAYMENT_CHOICES = [
-    ('stripe', 'Credit card')
+    ('stripe')
 ]
 
 MESSAGE_TAGS = {
