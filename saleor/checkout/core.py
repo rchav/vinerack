@@ -230,7 +230,6 @@ class Checkout(object):
                 shipping_price = 0
                 shipping_method_name = None
             group = order.groups.create(
-                shipping_required=shipping_required,
                 shipping_price=shipping_price,
                 shipping_method_name=shipping_method_name)
             group.add_items_from_partition(partition)
@@ -243,8 +242,9 @@ class Checkout(object):
     def _get_voucher(self):
         voucher_code = self.voucher_code
         if voucher_code is not None:
+            vouchers = Voucher.objects.active().select_for_update()
             try:
-                return Voucher.objects.get(code=self.voucher_code)
+                return vouchers.get(code=self.voucher_code)
             except Voucher.DoesNotExist:
                 return None
 
